@@ -1,0 +1,48 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "probabilityprisms:probability_prism",
+							"properties": {
+								"unstable": "false"
+							}
+						}
+					],
+					"functions": [
+						{
+							"function": "minecraft:copy_nbt",
+							"source": "block_entity",
+							"ops": [
+								{
+									"source": "FunctionTagId",
+									"target": "BlockEntityTag.FunctionTagId",
+									"op": "replace"
+								}
+							]
+						},
+						{
+							"function": "minecraft:copy_state",
+							"block": "probabilityprisms:probability_prism",
+							"properties": [
+								"unstable"
+							]
+						}
+					],
+					"name": "probabilityprisms:probability_prism"
+				}
+			],
+			"conditions": [
+				{
+					"condition": "minecraft:survives_explosion"
+				}
+			]
+		}
+	]
+}
